@@ -3,5 +3,42 @@
     <div class="panel-body">
       <h3>Index</h3>
       <a mat-raised-button color="primary" class="" routerLink="/route/new">Add Route</a>
+
+      <div>
+        <mat-table class="mat-cell" #table [dataSource]="dataSource">
+
+          <ng-container matColumnDef="initialLocation">
+            <mat-header-cell *matHeaderCellDef class="mat-cell">
+              Initial Location
+            </mat-header-cell>
+            <mat-cell *matCellDef="let route"> {{route.initialLocation}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="finalLocation">
+            <mat-header-cell *matHeaderCellDef>
+              Final Location
+            </mat-header-cell>
+            <mat-cell *matCellDef="let route"> {{route.finalLocation}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="pilot">
+            <mat-header-cell *matHeaderCellDef>
+              Pilot
+            </mat-header-cell>
+            <mat-cell *matCellDef="let route"> {{route.pilot.name}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="truck">
+            <mat-header-cell *matHeaderCellDef>
+              Truck
+            </mat-header-cell>
+            <mat-cell *matCellDef="let route"> {{route.truck.name}} </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="displayedColumns" class="mat-row"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+      </div>
+
     </div>
 </div>

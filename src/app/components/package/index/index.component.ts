@@ -10,7 +10,7 @@ import { PackageService } from '../../../services/package/package.service';
 })
 export class PackageIndexComponent implements OnInit {
 
-  title: '';
+  title: String;
   dataSource: any[];
   displayedColumns = ['name', 'weight', 'dimensions'];
   packages: any[];

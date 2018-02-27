@@ -1,3 +1,45 @@
-<p>
-  index works!
-</p>
+<div class="panel panel-primary">
+    <div class="panel-heading">{{title}}</div>
+    <div class="panel-body">
+      <h3>Index</h3>
+      <a mat-raised-button color="primary" class="" routerLink="/truck/new">Add Truck</a>
+
+      <div>
+        <mat-table class="mat-cell" #table [dataSource]="dataSource">
+
+          <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef class="mat-cell">
+              Name
+            </mat-header-cell>
+            <mat-cell *matCellDef="let truck"> {{truck.name}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="color">
+            <mat-header-cell *matHeaderCellDef>
+              Color
+            </mat-header-cell>
+            <mat-cell *matCellDef="let truck"> {{truck.color}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="model">
+            <mat-header-cell *matHeaderCellDef>
+              Model
+            </mat-header-cell>
+            <mat-cell *matCellDef="let truck"> {{truck.model}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="weightCapacity">
+            <mat-header-cell *matHeaderCellDef>
+              Weight Capacity
+            </mat-header-cell>
+            <mat-cell *matCellDef="let truck"> {{truck.weightCapacity}} </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="displayedColumns" class="mat-row"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+      </div>
+
+    </div>
+</div>
+
