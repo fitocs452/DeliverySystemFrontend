@@ -1,3 +1,45 @@
-<p>
-  create works!
-</p>
+<div class="panel panel-primary">
+    <div class="panel-heading">{{title}}</div>
+    <div class="panel-body">
+      <h3>Index</h3>
+
+      <div>
+        <form #heroForm="ngForm" (ngSubmit)="onSubmit()">
+          <button type="submit" mat-raised-button color="primary">Create new Route</button>
+          <mat-form-field>
+            <input matInput placeholder="Initial Location" name="initialLocation" required
+            [(ngModel)]="newRoute.initialLocation">
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput placeholder="Final Location" name="finalLocation" required
+             [(ngModel)]="newRoute.finalLocation">
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-select placeholder="Packages" [formControl]="packages" multiple>
+              <mat-option *ngFor="let package of packagesAvailable" [value]="package._id">{{package.name}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-select placeholder="Pilot" [(ngModel)]="pilot" name="pilot">
+              <mat-option *ngFor="let pilot of pilotsAvailable" [value]="pilot._id">
+                {{ pilot.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-select placeholder="Truck" [(ngModel)]="truck" name="truck">
+              <mat-option *ngFor="let truck of trucksAvailable" [value]="truck._id">
+                {{ truck.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <br>
+        </form>
+      </div>
+
+    </div>
+</div>

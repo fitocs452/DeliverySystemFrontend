@@ -103,6 +103,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     MatTooltipModule,
     NgbModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: RouteIndexComponent },
       { path: 'route/new', component: RouteCreateComponent },
