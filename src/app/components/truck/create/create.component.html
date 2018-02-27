@@ -1,3 +1,28 @@
-<p>
-  truck create works!
-</p>
+<div class="panel panel-primary">
+    <div class="panel-heading">{{title}}</div>
+    <div class="panel-body">
+      <h3>Create</h3>
+      <div>
+        <form #heroForm="ngForm" (ngSubmit)="onSubmit()">
+          <button type="submit" mat-raised-button color="primary">Create</button>
+          <mat-form-field>
+            <input matInput placeholder="Name" name="name" required
+            [(ngModel)]="newTruck.name">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Color" name="color" required
+             [(ngModel)]="newTruck.color">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Model" name="model" required
+             [(ngModel)]="newTruck.model">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Weight Capacity" name="weightCapacity" required
+             [(ngModel)]="newTruck.weightCapacity">
+          </mat-form-field>
+        </form>
+      </div>
+
+    </div>
+</div>

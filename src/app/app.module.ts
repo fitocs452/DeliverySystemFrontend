@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // Services
 import { PackageService } from './services/package/package.service';
@@ -101,6 +102,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     MatToolbarModule,
     MatTooltipModule,
     NgbModule,
+    FormsModule,
     RouterModule.forRoot([
       { path: '', component: RouteIndexComponent },
       { path: 'route/new', component: RouteCreateComponent },

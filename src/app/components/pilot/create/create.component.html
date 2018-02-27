@@ -1,3 +1,28 @@
-<p>
-  create works!
-</p>
+<div class="panel panel-primary">
+    <div class="panel-heading">{{title}}</div>
+    <div class="panel-body">
+      <h3>Create</h3>
+      <div>
+        <form #heroForm="ngForm" (ngSubmit)="onSubmit()">
+          <button type="submit" mat-raised-button color="primary">Create</button>
+          <mat-form-field>
+            <input matInput placeholder="Package name" name="name" required
+            [(ngModel)]="newPilot.name">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Package Weight" name="Weight" required
+             [(ngModel)]="newPilot.lastName">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Driving License" name="drivingLicense" required
+             [(ngModel)]="newPilot.drivingLicense">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Age" name="age" required
+             [(ngModel)]="newPilot.age">
+          </mat-form-field>
+        </form>
+      </div>
+
+    </div>
+</div>
