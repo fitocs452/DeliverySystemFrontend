@@ -1,7 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+// Services
+import { PackageService } from './services/package/package.service';
+import { PilotService } from './services/pilot/pilot.service';
+import { RouteService } from './services/route/route.service';
+import { TruckService } from './services/truck/truck.service';
 
+// Components
 import { AppComponent } from './app.component';
 import { PackageIndexComponent } from './components/package/index/index.component';
 import { PackageCreateComponent } from './components/package/create/create.component';
@@ -12,8 +18,10 @@ import { RouteCreateComponent } from './components/route/create/create.component
 import { TruckIndexComponent } from './components/truck/index/index.component';
 import { TruckCreateComponent } from './components/truck/create/create.component';
 
+// External libs
 import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { HttpModule } from '@angular/http';
 
 import {
   MatAutocompleteModule,
@@ -47,7 +55,7 @@ import {
   MatTableModule,
   MatTabsModule,
   MatToolbarModule,
-  MatTooltipModule,
+  MatTooltipModule
 } from '@angular/material';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -67,6 +75,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     PageNotFoundComponent,
   ],
   imports: [
+    HttpModule,
     BrowserModule,
     BrowserAnimationsModule,
     MatNativeDateModule,
@@ -104,7 +113,12 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
       { path: '**', component: PageNotFoundComponent }
     ])
   ],
-  providers: [],
+  providers: [
+    PackageService,
+    PilotService,
+    RouteService,
+    TruckService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
