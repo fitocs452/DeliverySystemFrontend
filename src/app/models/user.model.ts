@@ -8,10 +8,9 @@ export class User {
 
   toObject() {
     return  {
-      initialLocation: this.initialLocation,
-      finalLocation: this.finalLocation,
-      pilot: this.pilot,
-      truck: this.truck
+      username: this.username,
+      password: this.password,
+      email: this.email
     }
   }
 }

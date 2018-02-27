@@ -5,11 +5,13 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './index.component.html',
   styleUrls: ['./index.component.css']
 })
-export class IndexComponent implements OnInit {
+export class RouteIndexComponent implements OnInit {
+  title: 'Routes';
 
   constructor() { }
 
   ngOnInit() {
+    this.title = 'Routes';
   }
 
 }
